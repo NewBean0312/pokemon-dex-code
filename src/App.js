@@ -1,11 +1,16 @@
-import './App.css';
-import Pokedex from './component/Pokedex';
+import { AppBar, Toolbar } from "@mui/material";
+import Pokedex from "./components/Pokedex";
+import { NavLink } from "react-router-dom";
 
 function App() {
   return (
-    <div className="App">
-      <Pokedex />
-    </div>
+    <>
+      <AppBar position="static">
+        <Toolbar>
+          PokemonDex
+        </Toolbar>
+      </AppBar>
+    </>
   );
 }
 
