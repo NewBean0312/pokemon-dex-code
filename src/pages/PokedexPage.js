@@ -1,5 +1,6 @@
 import axios, { all } from "axios";
 import { useEffect, useState } from "react";
+import PokemonList from "../components/PokemonList";
 
 const Pokedex = () => {
   const [pokemonData, setPokemonData] = useState([]);
@@ -27,8 +28,8 @@ const Pokedex = () => {
     fetchData();
   }, []);
 
+  /*
   const renderPokemonList = () => {
-    console.log(pokemonData);
     return pokemonData.map((pokemon) => (
       <div key={pokemon.id}>
         <img src={pokemon.sprites.front_default} alt={pokemon.kor_name} />
@@ -36,9 +37,25 @@ const Pokedex = () => {
         <p>ID : {pokemon.id}</p>
       </div>
     ));
-  };
+ };
+ */
 
-  return <div>{renderPokemonList()}</div>;
+  return (
+    <>
+      <div>
+        <ul>
+          {pokemonData.map((pokemon) => (
+            <PokemonList
+              key={pokemon}
+              imgSrc={pokemon.sprites.front_default}
+              pokemonName={pokemon.kor_name}
+              id={pokemon.id}
+            />
+          ))}
+        </ul>
+      </div>
+    </>
+  );
 };
 
 export default Pokedex;

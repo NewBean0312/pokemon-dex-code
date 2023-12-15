@@ -1,14 +1,13 @@
 import { AppBar, Toolbar } from "@mui/material";
-import Pokedex from "./components/Pokedex";
 import { NavLink } from "react-router-dom";
+import PokedexPage from "./pages/PokedexPage";
 
 function App() {
   return (
     <>
       <AppBar position="static">
-        <Toolbar>
-          PokemonDex
-        </Toolbar>
+        <Toolbar>PokemonDex</Toolbar>
+        <PokedexPage />
       </AppBar>
     </>
   );
