@@ -1,4 +1,4 @@
-import axios, { all } from "axios";
+import axios from "axios";
 import { useEffect, useState } from "react";
 import PokemonList from "../components/PokemonList";
 
@@ -10,7 +10,7 @@ const Pokedex = () => {
     // api 가져오기
     const fetchData = async () => {
       const allPokemonData = [];
-      for (let i = 1; i < 151; i++) {
+      for (let i = 1; i < 152; i++) {
         const response = await axios.get(
           `https://pokeapi.co/api/v2/pokemon/${i}`
         );
@@ -28,25 +28,13 @@ const Pokedex = () => {
     fetchData();
   }, []);
 
-  /*
-  const renderPokemonList = () => {
-    return pokemonData.map((pokemon) => (
-      <div key={pokemon.id}>
-        <img src={pokemon.sprites.front_default} alt={pokemon.kor_name} />
-        <p>{pokemon.kor_name}</p>
-        <p>ID : {pokemon.id}</p>
-      </div>
-    ));
- };
- */
-
   return (
     <>
-      <div>
-        <ul>
+      <div className="flex justify-center w-screen bg-white">
+        <ul className="flex flex-wrap justify-around w-4/5 bg-red-500 mt-10">
           {pokemonData.map((pokemon) => (
             <PokemonList
-              key={pokemon}
+              key={pokemon.id}
               imgSrc={pokemon.sprites.front_default}
               pokemonName={pokemon.kor_name}
               id={pokemon.id}
