@@ -15,7 +15,7 @@ const Pokedex = () => {
     const fetchData = async () => {
       const allPokemonData = [];
       for (
-        let i =1;
+        let i = 1;
         i < Math.min(currentPage * pokemonPerPage, totalPokemon);
         i++
       ) {
@@ -41,26 +41,25 @@ const Pokedex = () => {
   };
 
   return (
-      <InfiniteScroll
-        dataLength={pokemonData.length}
-        next={fetchMoreData}
-        hasMore={currentPage * pokemonPerPage}
-        loader={<h4>Loading...</h4>}
-        endMessage={<p>All Pokémon have been loaded</p>}
-      >
-        <div className="flex justify-center w-screen bg-white">
-          <ul className="flex flex-wrap justify-around mt-10 w-4/5 ">
-            {pokemonData.map((pokemon) => (
-              <PokemonList
-                key={pokemon.id}
-                imgSrc={pokemon.sprites.front_default}
-                id={pokemon.id}
-                pokemonName={pokemon.kor_name}
-              />
-            ))}
-          </ul>
-        </div>
-      </InfiniteScroll>
+    <InfiniteScroll
+      dataLength={pokemonData.length}
+      next={fetchMoreData}
+      hasMore={currentPage * pokemonPerPage}
+      loader={<h4>Loading...</h4>}
+      endMessage={<p>All Pokémon have been loaded</p>}
+    >
+      <div className="flex justify-center w-screen bg-white">
+        <ul className="flex flex-wrap justify-around mt-10 w-4/5 ">
+          {pokemonData.map((pokemon) => (
+            <PokemonList
+              id={pokemon.id}
+              imgSrc={pokemon.sprites.front_default}
+              pokemonName={pokemon.kor_name}
+            />
+          ))}
+        </ul>
+      </div>
+    </InfiniteScroll>
   );
 };
 
