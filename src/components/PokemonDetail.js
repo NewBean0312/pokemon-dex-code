@@ -8,9 +8,20 @@ const PokemonDetail = ({ pokemon }) => {
   // 속성
   const renderTypes = () => {
     return pokemon.types.map((type, index) => (
-      <span key={type.type.name}>
+      <span
+        key={type.type.name}
+        className={
+          type.type.korean_name === "풀"
+            ? "text-green-600"
+            : type.type.korean_name === "독"
+            ? "text-purple-600"
+            : ""
+        }
+      >
         {type.type.korean_name}
-        {index < pokemon.types.length - 1 ? "," : ""}
+        <span className="text-black ml-1 mr-1">
+          {index < pokemon.types.length - 1 ? "," : ""}
+        </span>
       </span>
     ));
   };
@@ -28,7 +39,12 @@ const PokemonDetail = ({ pokemon }) => {
   // 기술
   const renderMoves = () => {
     return pokemon.moves.map((move, index) => (
-      <li className={index % 2 == 0 ? "bg-yellow-200" : "bg-yellow-100"} key={move.move.name}>{move.move.korean_name}</li>
+      <li
+        className={index % 2 == 0 ? "bg-yellow-200" : "bg-yellow-100"}
+        key={move.move.name}
+      >
+        {move.move.korean_name}
+      </li>
     ));
   };
 
@@ -50,7 +66,9 @@ const PokemonDetail = ({ pokemon }) => {
           <p className="pt-2 text-xl">키: {pokemon.height / 10}m</p>
           <p className="pt-2 text-xl">무게: {pokemon.weight / 10}kg</p>
           <p className="pt-2 text-xl">기술:</p>
-          <ul className="overflow-y-scroll w-64 h-64 text-lg">{renderMoves()}</ul>
+          <ul className="overflow-y-scroll w-64 h-64 text-lg">
+            {renderMoves()}
+          </ul>
         </div>
       </div>
     </div>
