@@ -7,7 +7,7 @@ function App() {
   return (
     <>
       <AppBar position="static">
-        <Toolbar>PokemonDex</Toolbar>
+        <Toolbar className="font-bold text-white text-xl">PokemonDex</Toolbar>
         <Router>
           <Routes>
             <Route path="/" element={<PokedexPage />} />

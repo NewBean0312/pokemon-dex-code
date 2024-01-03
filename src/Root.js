@@ -10,7 +10,7 @@ export default function Root() {
     },
     palette: {
       primary: {
-        main: "#32435f",
+        main: "#d43e33",
         contrastText: "#000",
       },
     },
