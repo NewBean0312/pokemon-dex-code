@@ -68,18 +68,6 @@ const PokemonDetail = ({ pokemon }) => {
     ));
   };
 
-  // 기술
-  const renderMoves = () => {
-    return pokemon.moves.map((move, index) => (
-      <li
-        className={index % 2 == 0 ? "bg-blue-200" : "bg-blue-100"}
-        key={move.move.name}
-      >
-        {move.move.korean_name}
-      </li>
-    ));
-  };
-
   return (
     <div className="flex justify-center w-screen h-full bg-white mr-auto ml-auto">
       <div className="flex w-3/4 h-3/4 mt-10 p-4 border-4 rounded-xl border-blue-600">
@@ -90,17 +78,15 @@ const PokemonDetail = ({ pokemon }) => {
             alt={pokemon.korean_name}
           />
         </div>
-        <div className="w-2/3 pt-10">
-          <p className="text-2xl text-gray-600"> #{pokemon.id}</p>
-          <h2 className="pt-2 text-5xl text-black">{pokemon.korean_name}</h2>
-          <p className="pt-2 text-xl">속성: {renderTypes()}</p>
-          <p className="pt-2 text-xl">특성: {renderAbilities()}</p>
-          <p className="pt-2 text-xl">키: {pokemon.height / 10}m</p>
-          <p className="pt-2 text-xl">무게: {pokemon.weight / 10}kg</p>
-          <p className="pt-2 text-xl">기술:</p>
-          <ul className="overflow-y-scroll w-64 h-64 text-lg">
-            {renderMoves()}
-          </ul>
+        <div className="flex w-2/3 pt-10">
+          <div className="w-2/5">
+            <p className="text-2xl text-gray-600"> #{pokemon.id}</p>
+            <h2 className="pt-2 text-5xl text-black">{pokemon.korean_name}</h2>
+            <p className="pt-2 text-xl">속성 : {renderTypes()}</p>
+            <p className="pt-2 text-xl">특성 : {renderAbilities()}</p>
+            <p className="pt-2 text-xl">키 : {pokemon.height / 10}m</p>
+            <p className="pt-2 text-xl">무게 : {pokemon.weight / 10}kg</p>
+          </div>
         </div>
       </div>
     </div>

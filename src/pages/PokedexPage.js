@@ -7,7 +7,7 @@ const Pokedex = () => {
   const [pokemonData, setPokemonData] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const pokemonPerPage = 76;
-  const totalPokemon = 152;
+  const totalPokemon = 151;
 
   // 데이터 받아오기
   useEffect(() => {
@@ -16,19 +16,19 @@ const Pokedex = () => {
       const allPokemonData = [];
       for (
         let i = 1;
-        i < Math.min(currentPage * pokemonPerPage, totalPokemon);
+        i <= Math.min(currentPage * pokemonPerPage, totalPokemon);
         i++
       ) {
         const response = await axios.get(
           `https://pokeapi.co/api/v2/pokemon/${i}`
         );
-        const speciesReponse = await axios.get(
+        const speciesResponse = await axios.get(
           `https://pokeapi.co/api/v2/pokemon-species/${i}`
         );
-        const korName = speciesReponse.data.names.find(
+        const koreanName = speciesResponse.data.names.find(
           (name) => name.language.name === "ko"
         );
-        allPokemonData.push({ ...response.data, kor_name: korName.name });
+        allPokemonData.push({ ...response.data, korean_name: koreanName.name });
       }
       setPokemonData(allPokemonData);
     };
@@ -39,6 +39,7 @@ const Pokedex = () => {
   const fetchMoreData = () => {
     setCurrentPage((prevPage) => prevPage + 1);
   };
+
 
   return (
     <InfiniteScroll
@@ -54,7 +55,7 @@ const Pokedex = () => {
             <PokemonList
               id={pokemon.id}
               imgSrc={pokemon.sprites.front_default}
-              pokemonName={pokemon.kor_name}
+              pokemonName={pokemon.korean_name}
             />
           ))}
         </ul>

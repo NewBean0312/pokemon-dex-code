@@ -1,10 +1,7 @@
 import { Link } from "react-router-dom";
 
-export default function PokemonList({
-  id,
-  imgSrc,
-  pokemonName,
-}) {
+export default function PokemonList({ id, imgSrc, pokemonName }) {
+  
   return (
     <>
       <li className="w-52 h-60 mt-6 mb-2 border-gray-900 border-2">
