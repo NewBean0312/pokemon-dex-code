@@ -44,6 +44,7 @@ const PokemonDetailsPage = () => {
     fetchData();
   }, [id]);
 
+
   return <PokemonDetail pokemon={pokemonData} />;
 };
 

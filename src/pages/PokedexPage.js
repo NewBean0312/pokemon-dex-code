@@ -7,7 +7,7 @@ const Pokedex = () => {
   const [pokemonData, setPokemonData] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const pokemonPerPage = 76;
-  const totalPokemon = 151;
+  const totalPokemon = 1000;
 
   // 데이터 받아오기
   useEffect(() => {
@@ -40,13 +40,14 @@ const Pokedex = () => {
     setCurrentPage((prevPage) => prevPage + 1);
   };
 
-
   return (
     <InfiniteScroll
       dataLength={pokemonData.length}
       next={fetchMoreData}
       hasMore={currentPage * pokemonPerPage}
-      loader={<h4>Loading...</h4>}
+      loader={
+          <div className="pt-2 text-3xl">포켓몬 불러오는중...</div>
+      }
       endMessage={<p>All Pokémon have been loaded</p>}
     >
       <div className="flex justify-center w-screen bg-white">

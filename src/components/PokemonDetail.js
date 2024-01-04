@@ -1,6 +1,6 @@
 import React from "react";
 
-const PokemonDetail = ({ pokemon }) => {
+export default function PokemonDetail({ pokemon }) {
   if (!pokemon) {
     return <p>Loading...</p>;
   }
@@ -55,12 +55,18 @@ const PokemonDetail = ({ pokemon }) => {
         {type.type.korean_name === "물" && <i class="fa-solid fa-droplet" />}
         {type.type.korean_name === "풀" && <i class="fa-solid fa-leaf" />}
         {type.type.korean_name === "전기" && <i class="fa-solid fa-bolt" />}
-        {type.type.korean_name === "얼음" && <i class="fa-solid fa-snowflake" />}
-        {type.type.korean_name === "격투" && <i class="fa-solid fa-hand-fist" />}
+        {type.type.korean_name === "얼음" && (
+          <i class="fa-solid fa-snowflake" />
+        )}
+        {type.type.korean_name === "격투" && (
+          <i class="fa-solid fa-hand-fist" />
+        )}
         {type.type.korean_name === "독" && <i class="fa-solid fa-flask" />}
         {type.type.korean_name === "땅" && <i class="fa-solid fa-mound" />}
         {type.type.korean_name === "비행" && <i class="fa-solid fa-feather" />}
-        {type.type.korean_name === "에스퍼" && <i class="fa-solid fa-wand-magic-sparkles" />}
+        {type.type.korean_name === "에스퍼" && (
+          <i class="fa-solid fa-wand-magic-sparkles" />
+        )}
         {type.type.korean_name === "벌레" && <i class="fa-solid fa-bug" />}
         {type.type.korean_name === "바위" && <i class="fa-solid fa-globe" />}
         {type.type.korean_name === "고스트" && <i class="fa-solid fa-ghost" />}
@@ -111,6 +117,4 @@ const PokemonDetail = ({ pokemon }) => {
       </div>
     </div>
   );
-};
-
-export default PokemonDetail;
+}
