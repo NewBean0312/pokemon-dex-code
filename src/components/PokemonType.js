@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import PokemonTypeData from "./PokemonTypeData";
 
 export default function PokemonType({ id }) {
-  const [pokemonTypeData, setPokemonTypeData] = useState(null);
+  const [pokemonTypeData, setPokemonTypeData] = useState(0);
   useEffect(() => {
     const fetchData = async () => {
       const response = await axios.get(`https://pokeapi.co/api/v2/pokemon/${id}`);
@@ -29,8 +29,6 @@ export default function PokemonType({ id }) {
 
   return (
     <>
-      <div>{id}</div>
-      <div>{}</div>
       <PokemonTypeData pokemon={pokemonTypeData} />
     </>
   );

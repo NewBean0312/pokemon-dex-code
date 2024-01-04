@@ -1,5 +1,7 @@
 export default function PokemonTypeData({ pokemon }) {
-  // 속성
+  if (!pokemon.types) {
+    return <p className="text-sm ml-2">Loading...</p>;
+  }
   const renderType = () => {
     return pokemon.types.map((type) => (
       <span
@@ -41,10 +43,36 @@ export default function PokemonTypeData({ pokemon }) {
             ? "text-indigo-200"
             : type.type.korean_name === "페어리"
             ? "text-pink-300"
-            : ""
+            : "text-white"
         }
-      ><i class="fa-solid fa-circle" /></span>
+      >
+        {type.type.korean_name === "노말" && <i class="fa-solid fa-circle" />}
+        {type.type.korean_name === "불꽃" && <i class="fa-solid fa-fire" />}
+        {type.type.korean_name === "물" && <i class="fa-solid fa-droplet" />}
+        {type.type.korean_name === "풀" && <i class="fa-solid fa-leaf" />}
+        {type.type.korean_name === "전기" && <i class="fa-solid fa-bolt" />}
+        {type.type.korean_name === "얼음" && (
+          <i class="fa-solid fa-snowflake" />
+        )}
+        {type.type.korean_name === "격투" && (
+          <i class="fa-solid fa-hand-fist" />
+        )}
+        {type.type.korean_name === "독" && <i class="fa-solid fa-flask" />}
+        {type.type.korean_name === "땅" && <i class="fa-solid fa-mound" />}
+        {type.type.korean_name === "비행" && <i class="fa-solid fa-feather" />}
+        {type.type.korean_name === "에스퍼" && (
+          <i class="fa-solid fa-wand-magic-sparkles" />
+        )}
+        {type.type.korean_name === "벌레" && <i class="fa-solid fa-bug" />}
+        {type.type.korean_name === "바위" && <i class="fa-solid fa-globe" />}
+        {type.type.korean_name === "고스트" && <i class="fa-solid fa-ghost" />}
+        {type.type.korean_name === "드래곤" && <i class="fa-solid fa-dragon" />}
+        {type.type.korean_name === "악" && <i class="fa-solid fa-crossbones" />}
+        {type.type.korean_name === "강철" && <i class="fa-solid fa-shield" />}
+        {type.type.korean_name === "페어리" && <i class="fa-solid fa-heart" />}
+        <span className="pl-1"></span>
+      </span>
     ));
   };
-  return <>{renderType()}</>;
+  return <span className="pl-2 pt-2">{renderType()}</span>;
 }
