@@ -1,70 +1,28 @@
-# Getting Started with Create React App
+## 포켓몬 도감
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### 총 900마리의 포켓몬 도감
 
-## Available Scripts
 
-In the project directory, you can run:
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### 개발 기록
+ - 포켓몬 JSON 적용
+   - PokeApi를 사용함
+ - 페이지 분리 및 PokemonList 컴포넌트 작업
+ - PokemonList 디자인 작업
+   - card section 처럼 나오게 디자인
+ - DetailPage를 위한 Router 적용
+   - Router 오류 발생
+   - 버전 오류인줄 알았으나, import를 BrowserRouter로 감쌈 ▶오류 해결
+ - 상세 페이지 UI 디자인
+   - 특정 포켓몬은 나오지 않는 오류 발생
+   - 기술 목록을 한글로 변경 시, 오류가 발생함
+   - 아쉽지만, 기술 목록 기능은 제거 ▶ 오류 해결
+ - 상세 페이지 포켓몬 색상 및 아이콘 적용
+   - 폰트어썸을 사용하여 아이콘을 적용하였음
+ - 메인 페이지 속성 표시 및 아이콘 적용
+   - types가 null로 표시되어 오류 발생
+   - null인 부분은 useState(0)으로 하고, 0은 배경을 흰색으로 적용함 ▶ 오류 해결
