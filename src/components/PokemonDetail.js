@@ -96,15 +96,15 @@ export default function PokemonDetail({ pokemon }) {
 
   return (
     <div className="flex justify-center w-screen h-full bg-white mr-auto ml-auto">
-      <div className="flex justify-center w-3/4 h-3/4 mt-10 p-4 border-4 rounded-xl border-red-600">
-        <div className="w-1/2">
+      <div className="flex flex-col md:flex-row justify-center w-3/4 h-3/4 mt-10 p-4 border-4 rounded-xl border-red-600">
+        <div className="w-full md:w-1/2">
           <img
             className="w-3/4 mt-10 ml-auto mr-auto rounded-xl border-4 border-gray-900"
             src={pokemon.sprites.front_default}
             alt={pokemon.korean_name}
           />
         </div>
-        <div className="flex w-1/2 pt-10">
+        <div className="flex w-full md:w-1/2 pt-10">
           <div className="w-full">
             <p className="text-2xl text-gray-600"> #{pokemon.id}</p>
             <h2 className="pt-2 text-5xl text-black">{pokemon.korean_name}</h2>

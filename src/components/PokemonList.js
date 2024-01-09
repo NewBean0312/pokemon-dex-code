@@ -10,7 +10,7 @@ export default function PokemonList({ id, imgSrc, pokemonName }) {
           <Link to={`/pokemon/${id}`} className="grid">
             <PokemonType id={id} />
             <img
-              className="w-1/3 sm:w-1/2 lg:w-2/3 justify-self-center"
+              className="w-1/3 sm:w-1/2 justify-self-center"
               src={imgSrc}
               alt={pokemonName}
             />
